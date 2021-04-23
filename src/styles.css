@@ -9,7 +9,7 @@ body {
 
 .dashboard {
   width: 600px;
-  height: 500px;
+  height: 470px;
   background-color: #fff;
   font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
   border-radius: 16px;
@@ -25,6 +25,8 @@ body {
 
 #current-date {
   font-size: 16px;
+  text-align: right;
+  padding-bottom: 6px;
 }
 
 #current-city {
@@ -107,11 +109,17 @@ img {
 }
 .city {
   width: 350px;
-  background: #fcecdd;
+  background: #f8f6fd;
 }
 #location-button {
   background-color: #fea82f;
 }
 #search-button {
   background-color: #ffc288;
+}
+a {
+  color: #ec6e4c;
+}
+a .hover {
+  color: #fea82f;
 }
