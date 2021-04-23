@@ -28,50 +28,65 @@
             <h4 id="current-date">Today, 21:33</h4>
           </div>
           <div class="menu">
-            <form id="city-input">
+            <div class="city-input">
               <input
-                autocomplete="off"
-                autofocus="on"
+                type="text"
                 class="city"
                 id="search-a-city"
-                placeholder="Search for a city..."
-                type="text"
+                autocomplete="off"
+                autofocus="on"
+                placeholder="Enter a city..."
               />
-              <input id="search-button" type="submit" value="🔎" />
-            </form>
-            <button class="button" type="button" id="location-button">
-              📍
-            </button>
+              <button
+                class="btn btn-outline-secondary"
+                id="search-button"
+                type="button"
+              >
+                🔎
+              </button>
+              <button
+                class="btn btn-outline-secondary"
+                id="location-button"
+                type="button"
+              >
+                📍
+              </button>
+            </div>
           </div>
-          <div class="row row-6">
-            <ul>
-              <li>
-                <h1 id="current-city">Valencia</h1>
-              </li>
-              <li>
-                <h2 class="description">Clear</h2>
-              </li>
-              <li>
-                <p>
-                  <span class="humidity"
-                    >humidity: <span id="humidity-percent"></span>10%</span
-                  >, <span class="wind">Wind:</span
-                  ><span id="wind-speed">5Km/h</span>
-                </p>
-              </li>
-            </ul>
-          </div>
-          <div class="row row-6">
-            <img
-              src="http://openweathermap.org/img/wn/10d@2x.png"
-              alt="cloud"
-              id="weather-icon"
-              width="70px"
-            />
-            <span id="temperature"
-              >5 <a href="#" id="celcius">ºC</a> |
-              <a href="##" id="fahrenheit"> ºF</a></span
-            >
+          <br />
+          <div class="row">
+            <div class="col-7">
+              <ul>
+                <li>
+                  <h1 id="current-city">Valencia</h1>
+                </li>
+                <li>
+                  <h2 class="description">Clear</h2>
+                </li>
+                <li>
+                  <p>
+                    <span class="humidity"
+                      >humidity: <span id="humidity-percent">10%</span></span
+                    >,
+                    <span class="wind"
+                      >Wind: <span id="wind-speed">5Km/h</span></span
+                    >
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-5">
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt="cloud"
+                id="weather-icon"
+                width="70px"
+              />
+              <span id="temperature"
+                >5 <a href="#" id="celcius">ºC</a> |
+                <a href="##" id="fahrenheit"> ºF</a></span
+              >
+            </div>
           </div>
           <hr />
           <br />
@@ -82,7 +97,8 @@
                   <p>Tues</p>
                   <div class="icons">☀️</div>
                   <br />
-                  <div class="forecast-temperature">23ºC</div>
+                  <span id="forecast-temperature-min">23ºC</span>
+                  <span id="forecast-temperature-max"> 30ºC</span>
                 </div>
               </div>
               <div class="col border-right">
@@ -90,7 +106,8 @@
                   <p>Wed</p>
                   <div class="icons">☀️</div>
                   <br />
-                  <div class="forecast-temperature">23ºC</div>
+                  <span id="forecast-temperature-min">23ºC</span>
+                  <span id="forecast-temperature-max"> 30ºC</span>
                 </div>
               </div>
               <div class="col border-right">
@@ -98,7 +115,8 @@
                   <p>Thu</p>
                   <div class="icons">☀️</div>
                   <br />
-                  <div class="forecast-temperature">23ºC</div>
+                  <span id="forecast-temperature-min">23ºC</span>
+                  <span id="forecast-temperature-max"> 30ºC</span>
                 </div>
               </div>
 
@@ -107,7 +125,8 @@
                   <p>Fri</p>
                   <div class="icons">☀️</div>
                   <br />
-                  <div class="forecast-temperature">23ºC</div>
+                  <span id="forecast-temperature-min">23ºC</span>
+                  <span id="forecast-temperature-max"> 30ºC</span>
                 </div>
               </div>
 
@@ -116,14 +135,23 @@
                   <p>Sat</p>
                   <div class="icons">☀️</div>
                   <br />
-                  <div class="forecast-temperature">23ºC</div>
+                  <span id="forecast-temperature-min">23ºC</span>
+                  <span id="forecast-temperature-max"> 30ºC</span>
                 </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <hr>
-      <br />
       <footer>
-        <p class="coder"> <a href="https://github.com/marchalseverine/WeatherApp-MS" target="_blank">Open-source code </a> by Séverine Marchal</p>
+        <p class="coder">
+          <a
+            href="https://github.com/marchalseverine/WeatherApp-MS"
+            target="_blank"
+            >Open-source code
+          </a>
+          by Séverine Marchal
+        </p>
       </footer>
     </div>
   </body>
