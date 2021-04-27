@@ -120,6 +120,9 @@ img {
 a {
   color: #ec6e4c;
 }
-a .hover {
+a, .active:hover {
   color: #fea82f;
+  text-decoration: none;
 }
+
+
