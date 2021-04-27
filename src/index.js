@@ -54,8 +54,8 @@ if (index < 5){
         <p>${dayFormat(forecastDay.dt)}</p>
         <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="">
         <br />
-        <span id="forecast-temperature-min">${Math.round(forecastDay.temp.max)}ºC</span>
-        <span id="forecast-temperature-max"> ${Math.round(forecastDay.temp.min)}ºC</span>
+        <span id="forecast-temperature-min">${Math.round(forecastDay.temp.max)} ºC</span>
+        <span id="forecast-temperature-max"> ${Math.round(forecastDay.temp.min)}ºC </span>
       </div>
     </div>
     `;
@@ -155,7 +155,9 @@ axios.get(apiUrl).then(displayForecast);
   function ShowCelsius(event){
       event.preventDefault();
       let tempElement = document.querySelector("#temperature");
+     
       tempElement.innerHTML = Math.round(celsiusTemperature);
+
       celsiusLink.classList.add("active");
       fahrenheitLink.classList.remove("active");
   }
