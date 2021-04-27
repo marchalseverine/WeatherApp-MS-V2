@@ -24,24 +24,42 @@ function formatDate (timestamp){
   
   //
 
+  function dayFormat (timestamp){
+    let date = new Date (timestamp * 1000);
+    let day = date.getDay();
+    let days = [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat",
+    ];
+
+    return days[day];
+
+  }
+
   function displayForecast(response){
-    console.log(response.data.daily);
+    let forecast = response.data.daily;
     let forecastElement = document.querySelector ("#forecast");
     let forecastHTML = `<div class="row row-col-5">`;
-    let days =["Thu", "Fri", "Sat", "Sun", "Mon"];
-    days.forEach (function(day){
-
+    
+    forecast.forEach (function(forecastDay, index){
+if (index < 5){
     forecastHTML = forecastHTML + `
     <div class="col border-right">
       <div class="day1" id="weather-forecast-day">
-        <p>${day}</p>
-        <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+        <p>${dayFormat(forecastDay.dt)}</p>
+        <img src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="">
         <br />
-        <span id="forecast-temperature-min">23ºC</span>
-        <span id="forecast-temperature-max"> 30ºC</span>
+        <span id="forecast-temperature-min">${Math.round(forecastDay.temp.max)}ºC</span>
+        <span id="forecast-temperature-max"> ${Math.round(forecastDay.temp.min)}ºC</span>
       </div>
     </div>
-    `
+    `;
+  }
   }
     )
 forecastHTML = forecastHTML + `</div>`;
@@ -51,8 +69,8 @@ forecastElement.innerHTML = forecastHTML;
   
 function getForeast(coordinates){
   console.log(coordinates)
-  units = "metric";
-  let apiUrl =`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&unit=${units}`
+  unit = "metrics";
+  let apiUrl =`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`
 console.log(apiUrl);
 axios.get(apiUrl).then(displayForecast);
 }
